@@ -11,14 +11,20 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "json-server": "^0.17.4",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
+  "homepage": "https://Nikotryz.github.io/gh-pages-demo",
   "scripts": {
+    "predeploy": "rm -rf build && npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "serve": "json-server --watch ./src/server/db/index.js --routes ./src/server/routes.json --port 3001",
+    "save-json-api": "node ./src/scripts/save-json-api.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -40,5 +46,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "node-fs": "^0.1.7"
   }
 }
